@@ -1,0 +1,85 @@
+@use 'variables' as var;
+
+:root {
+    --azure_radiance:hsl(212, 100%, 50%); // #0079FF
+    --lynch:         hsl(217, 20%, 51%);  // #697C9A
+    --kashmir-blue:  hsl(217, 35%, 45%);  // #4B6A9B
+    --ebony-clay:    hsl(216, 21%, 21%);  // #2B3442
+    --zircon:        hsl(227, 100%, 98%); // #F6F8FF
+    --white:         hsl(0, 0%, 100%);    // #FEFEFE
+    --big-stone:     hsl(220, 40%, 13%);  // #141d2f
+    --cloud-burst:   hsl(222, 41%, 20%);  // #1E2A47
+    --sunset-orange: hsl(0, 92%, 62%);    // #F74646
+
+    --theme-primary:    var(--azure_radiance);
+    --theme-secondary:  var(--white);
+    --theme-tertiary:   var(--big-stone);
+    --theme-background: var(--zircon);
+    --theme-foreground: var(--lynch);
+    --theme-heading:    var(--ebony-clay);
+    --theme-accent:     var(--kashmir-blue);
+    --theme-error:      var(--sunset-orange);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --theme-background: var(--big-stone);
+    }
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: var.$font-family;
+    font-size: 62.5%;
+    background-color: var(--theme-background);
+}
+
+a {
+    text-decoration: none;
+}
+
+.sr-only {
+    position: absolute;
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+.font-xlarge {
+    font-size: var.$fz-xlrg;
+    line-height: var.$lh-xlrg;
+}
+
+.font-large {
+    font-size: var.$fz-lrg;
+    line-height: var.$lh-lrg;
+}
+
+.font-med {
+    font-size: var.$fz-med;
+    line-height: var.$lh-med;
+}
+
+.font-small {
+    font-size: var.$fz-small;
+    line-height: var.$lh-small;
+}
+
+.font-xsmall {
+    font-size: var.$fz-xsmall;
+    line-height: var.$lh-xsmall;
+}
+
+.container {
+    width: 375px;
+    margin: 10vw auto;
+    border: 1px solid green;
+}
