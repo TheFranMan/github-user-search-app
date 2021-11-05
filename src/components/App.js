@@ -1,7 +1,14 @@
+import '../assets/scss/main.scss'
+import Header from './Header.js'
+import Search from './Search.js'
+import Bio from './Bio.js'
+
 function App() {
   return (
-    <div className="App">
-      here
+    <div className="container">
+      <Header />
+      <Search />
+      <Bio />
     </div>
   );
 }
