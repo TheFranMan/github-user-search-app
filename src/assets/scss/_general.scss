@@ -9,6 +9,7 @@
     --theme-heading:    var(--ebony-clay);
     --theme-accent:     var(--kashmir-blue);
     --theme-error:      var(--sunset-orange);
+    --theme-white:      var(--white);
 }
 
 .dark-mode {
@@ -17,6 +18,7 @@
     --theme-foreground: var(--white);
     --theme-heading:    var(--white);
     --theme-accent:     var(--white );
+    --theme-white:      var(--white);
 }
 
 .sr-only {

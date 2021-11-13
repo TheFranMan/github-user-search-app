@@ -8,7 +8,7 @@ export default function Search(props) {
             <form className="search__form">
                 <input className="search__form__input" type="text" aria-label="Search" placeholder="Search GitHub username.."/>
                 { props.error && <div className="search__form__errors">No results</div> }
-                <input className="search__form__submit" type="submit" />
+                <input className="search__form__submit" type="submit" value="Search"/>
             </form>
         </section>
     );

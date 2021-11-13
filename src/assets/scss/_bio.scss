@@ -80,7 +80,12 @@
             grid-template-columns: 20px 1fr;
             margin-bottom: 1.6em;
             font-size: var.$fz-xxsmall;
-            color: var(--theme-accent);
+
+            &__icon {
+                path {
+                    fill: var(--theme-accent);
+                }
+            }
 
             &__text {
                 padding-left: 1em;

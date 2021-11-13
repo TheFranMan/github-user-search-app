@@ -1,7 +1,7 @@
-import icon_location from '../assets/images/icon-location.svg'
-import icon_website from '../assets/images/icon-website.svg'
-import icon_twitter from '../assets/images/icon-twitter.svg'
-import icon_company from '../assets/images/icon-company.svg'
+import {ReactComponent as IconLocation} from '../assets/images/icon-location.svg';
+import {ReactComponent as IconWebsite} from '../assets/images/icon-website.svg';
+import {ReactComponent as IconTwitter} from '../assets/images/icon-twitter.svg';
+import {ReactComponent as IconCompany} from '../assets/images/icon-company.svg';
 import classnames from 'classnames';
 
 export default function Bio(props) {
@@ -71,19 +71,19 @@ export default function Bio(props) {
             </div>
             <ul className="bio__links">
                 <li className={ classnames("bio__links__item location", null === props.user.location ? unavailableClass : '' ) }>
-                    <img className="bio__links__item__img" src={ icon_location } alt="location" />
+                    <IconLocation className="bio__links__item__icon" />
                     { location }
                 </li>
                 <li className={ classnames("bio__links__item blog", null === props.user.blog ? unavailableClass : '') }>
-                    <img className="bio__links__item__img" src={ icon_website } alt="blog" />
+                    <IconWebsite className="bio__links__item__icon" />
                     { blog }
                 </li>
                 <li className={ classnames("bio__links__item twitter", null === props.user.twitter ? unavailableClass : '') }>
-                    <img className="bio__links__item___img" src={ icon_twitter } alt="twitter" />
+                    <IconTwitter className="bio__links__item__icon" />
                     { twitter }
                 </li>
                 <li className={ classnames("bio__links__item company", null === props.user.company ? unavailableClass : '') }>
-                    <img className="bio__links__item___img" src={ icon_company } alt="company" />
+                    <IconCompany className="bio__links__item__icon" />
                     { company }
                 </li>
             </ul>

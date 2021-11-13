@@ -6,25 +6,27 @@
     align-items: center;
     background-color: var(--theme-secondary);
     padding: .65em 0;
+    padding-right: 0.7em;
+    padding-left: 1.6em;
     border-radius: var.$radius;
 
     &__icon {
-        margin-left: 1.6em;
+        // margin-left: 1.6em;
         width: 20px;
         height: 20px;
     }
 
     &__form {
         display: flex;
-        margin-left: .895em;
         width: 100%;
 
         &__input {
+            margin-left: .895em;
             flex: 1;
             border: none;
             outline: none; // for a11y?
             font-family: var.$font-family;
-            font-size: var.$fz-xxsmall;
+            font-size: 1.2rem;
             line-height: 1.92308em;
             color: var(--theme-accent);
             background-color: var(--theme-secondary);
@@ -39,7 +41,7 @@
             font-family: var.$font-family;
             font-size: var.$fz-xsmall;
             font-weight: 700;
-            color: var(--theme-secondary);
+            color: var(--theme-white);
             background-color: var(--theme-primary);
             border: none;
             border-radius: var.$radius;
