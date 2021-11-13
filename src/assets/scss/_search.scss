@@ -18,6 +18,7 @@
 
     &__form {
         display: flex;
+        position: relative;
         width: 100%;
 
         &__input {
@@ -36,6 +37,17 @@
             }
         }
 
+        &__errors {
+            position: absolute;
+            color: var(--theme-error);
+            white-space: nowrap;
+            font-weight: 700;
+            font-size: 1.2rem;
+            right: 35%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
         &__submit {
             padding: .892857em 1.285714em;
             font-family: var.$font-family;
@@ -45,6 +57,10 @@
             background-color: var(--theme-primary);
             border: none;
             border-radius: var.$radius;
+
+            &:hover {
+                cursor: pointer;
+            }
         }
     }
 }

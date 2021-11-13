@@ -30,21 +30,27 @@ export default function Bio(props) {
     }
 
     let location = notAvailable
+    let locationNotActive = false
     if ( null !== props.user.location ) {
         location = <span className="bio__links__item__text">{ props.user.location }</span>
+        locationNotActive = true
     }
-
     let blog = notAvailable
-    if ( null !== props.user.blog ) {
+    let blogNotActive = false
+    if ( null !== props.user.blog && "" !== props.user.blog ) {
         blog = <a className="bio__links__item__text" href={ props.user.blog } target="_blank" rel="noreferrer">{ props.user.blog }</a>
+        blogNotActive = true
     }
 
     let twitter = notAvailable
+    let twitterNotActive = false
     if ( null !== props.user.twitter ) {
         twitter = <a className="bio__links__item__text" href={ props.user.twitter } target="_blank" rel="noreferrer">{ props.user.twitter }</a>
+        twitterNotActive = true
     }
 
     let company = notAvailable
+    let companyNotActive = false
     if ( null !== props.user.company ) {
         let companyLink = props.user.company
 
@@ -53,6 +59,7 @@ export default function Bio(props) {
         }
 
         company = <a className="bio__links__item__text" href={ 'https://github.com/' + companyLink } target="_blank" rel="noreferrer">{ props.user.company }</a>
+        companyNotActive = true
     }
 
     return (
@@ -70,19 +77,19 @@ export default function Bio(props) {
                 <Details title="following" value={ props.user.repos.following } />
             </div>
             <ul className="bio__links">
-                <li className={ classnames("bio__links__item location", null === props.user.location ? unavailableClass : '' ) }>
+                <li className={ classnames("bio__links__item location", locationNotActive ? '' : unavailableClass) }>
                     <IconLocation className="bio__links__item__icon" />
                     { location }
                 </li>
-                <li className={ classnames("bio__links__item blog", null === props.user.blog ? unavailableClass : '') }>
+                <li className={ classnames("bio__links__item blog", blogNotActive ? '' : unavailableClass) }>
                     <IconWebsite className="bio__links__item__icon" />
                     { blog }
                 </li>
-                <li className={ classnames("bio__links__item twitter", null === props.user.twitter ? unavailableClass : '') }>
+                <li className={ classnames("bio__links__item twitter", twitterNotActive ? '' : unavailableClass) }>
                     <IconTwitter className="bio__links__item__icon" />
                     { twitter }
                 </li>
-                <li className={ classnames("bio__links__item company", null === props.user.company ? unavailableClass : '') }>
+                <li className={ classnames("bio__links__item company", companyNotActive ? '' : unavailableClass) }>
                     <IconCompany className="bio__links__item__icon" />
                     { company }
                 </li>

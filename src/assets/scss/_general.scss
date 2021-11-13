@@ -18,6 +18,7 @@
     --theme-foreground: var(--white);
     --theme-heading:    var(--white);
     --theme-accent:     var(--white );
+    --theme-error:      var(--sunset-orange);
     --theme-white:      var(--white);
 }
 
@@ -51,32 +52,11 @@ body {
 
 a {
     text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
 }
-
-// .font-xlarge {
-//     font-size: var.$fz-xlrg;
-//     line-height: var.$lh-xlrg;
-// }
-
-// .font-large {
-//     font-size: var.$fz-lrg;
-//     line-height: var.$lh-lrg;
-// }
-
-// .font-med {
-//     font-size: var.$fz-med;
-//     line-height: var.$lh-med;
-// }
-
-// .font-small {
-//     font-size: var.$fz-small;
-//     line-height: var.$lh-small;
-// }
-
-// .font-xsmall {
-//     font-size: var.$fz-xsmall;
-//     line-height: var.$lh-xsmall;
-// }
 
 #container {
     width: 375px;
