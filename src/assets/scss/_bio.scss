@@ -1,6 +1,8 @@
 @use 'variables' as var;
 
 .bio {
+    display: grid;
+    grid-template-columns: 70px 1fr;
     margin-top: 1.6em;
     background-color: var(--theme-secondary);
     border-radius: var.$radius;
@@ -14,6 +16,8 @@
     }
 
     &__meta {
+        margin-left: 1.9em;
+
         &__name {
             font-size: var.$fz-med;
             font-weight: 700;
@@ -32,6 +36,7 @@
     }
 
     &__bio {
+        grid-column: 1/ -1;
         margin-top: 2.538461em;
         font-size: var.$fz-xxsmall;
         color: var(--theme-accent);
@@ -39,6 +44,7 @@
     }
 
     &__repos {
+        grid-column: 1/ -1;
         border-radius: 10px;
         background-color: var(--theme-background);
         padding: 1.8em 3em;
@@ -65,13 +71,13 @@
     }
 
     &__links {
+        grid-column: 1/ -1;
         list-style-type: none;
         margin-top: 2.4em;
 
         &__item {
             display: grid;
             grid-template-columns: 20px 1fr;
-            // justify-content: start;
             margin-bottom: 1.6em;
             font-size: var.$fz-xxsmall;
             color: var(--theme-accent);
