@@ -1,0 +1,32 @@
+@use 'variables' as var;
+
+.main_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__title {
+        font-size: var.$fz-xlrg;
+        color: var(--theme-heading);
+    }
+
+    &__switcher {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: var.$fz-xsmall;
+        letter-spacing: .19230769em;
+        // line-height: var.$lh-med;
+        text-transform: uppercase;
+        font-weight: 700;
+        color: var(--theme-accent);
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &__img {
+            margin-left: 1.2308em;
+        }
+    }
+}

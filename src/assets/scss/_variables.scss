@@ -1,13 +1,28 @@
 $font-family: 'Space Mono', monospace;
 
-$fz-xlrg:   2.6rem;
-$fz-lrg:    2.2rem;
-$fz-med:    1.6rem;
-$fz-small:  1.5rem;
-$fz-xsmall: 1.3rem;
+$radius: 1.5rem;
+
+:root {
+    --azure_radiance:hsl(212, 100%, 50%); // #0079FF
+    --lynch:         hsl(217, 20%, 51%);  // #697C9A
+    --kashmir-blue:  hsl(217, 35%, 45%);  // #4B6A9B
+    --ebony-clay:    hsl(216, 21%, 21%);  // #2B3442
+    --zircon:        hsl(227, 100%, 98%); // #F6F8FF
+    --white:         hsl(0, 0%, 100%);    // #FEFEFE
+    --big-stone:     hsl(220, 40%, 13%);  // #141d2f
+    --cloud-burst:   hsl(222, 41%, 20%);  // #1E2A47
+    --sunset-orange: hsl(0, 92%, 62%);    // #F74646
+}
+
+$fz-xlrg:    2.6rem;
+$fz-lrg:     2.2rem;
+$fz-med:     1.6rem;
+$fz-small:   1.5rem;
+$fz-xsmall:  1.4rem;
+$fz-xxsmall: 1.3rem;
 
 $lh-xlrg:   3.8;
 $lh-lrg:    3.3;
 $lh-med:    2.5;
 $lh-small:  2.4;
-$lh-xsmall: 2.0;
+$lh-xxsmall:1.0;

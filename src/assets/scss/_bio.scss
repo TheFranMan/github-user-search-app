@@ -1,0 +1,86 @@
+@use 'variables' as var;
+
+.bio {
+    margin-top: 1.6em;
+    background-color: var(--theme-secondary);
+    border-radius: var.$radius;
+    padding: 3.2em 2.4em;
+
+    &__avatar {
+        $dimension: 70px;
+        width: $dimension;
+        height: $dimension;
+        border-radius: 50%;
+    }
+
+    &__meta {
+        &__name {
+            font-size: var.$fz-med;
+            font-weight: 700;
+            color: var(--theme-heading);
+        }
+
+        &__username {
+            font-size: var.$fz-xxsmall;
+            color: var(--theme-primary);
+        }
+
+        &__joined {
+            font-size: var.$fz-xxsmall;
+            color: var(--theme-foreground);
+        }
+    }
+
+    &__bio {
+        margin-top: 2.538461em;
+        font-size: var.$fz-xxsmall;
+        color: var(--theme-accent);
+        line-height: 1.9230769em;
+    }
+
+    &__repos {
+        border-radius: 10px;
+        background-color: var(--theme-background);
+        padding: 1.8em 3em;
+        display: flex;
+        text-align: center;
+        justify-content: space-between;
+        margin-top: 2.3em;
+
+        &__card {
+            &__title {
+                font-size: 1.1em;
+                color: var(--theme-accent);
+                font-weight: 400;
+                text-transform: capitalize;
+                margin-bottom: .72727272em;
+            }
+
+            &__value {
+                font-size: 1.6em;
+                color: var(--theme-heading);
+                font-weight: 700;
+            }
+        }
+    }
+
+    &__links {
+        list-style-type: none;
+        margin-top: 2.4em;
+
+        &__item {
+            display: grid;
+            grid-template-columns: 20px 1fr;
+            // justify-content: start;
+            margin-bottom: 1.6em;
+            font-size: var.$fz-xxsmall;
+            color: var(--theme-accent);
+
+            &__text {
+                padding-left: 1em;
+                color: var(--theme-accent);
+                width: max-content;
+            }
+        }
+    }
+}
