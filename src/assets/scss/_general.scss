@@ -59,7 +59,12 @@ a {
 }
 
 #container {
-    width: 375px;
+    width: max(100%, var.$mobile);
     margin: 10vw auto;
     padding: 0 2.4em;
+
+    @include var.breakmin(var.$ipad) {
+        color: green;
+        width: var.$ipad;
+    }
 }

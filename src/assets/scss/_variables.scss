@@ -2,6 +2,9 @@ $font-family: 'Space Mono', monospace;
 
 $radius: 1.5rem;
 
+$mobile: 375px;
+$ipad: 573px;
+
 :root {
     --azure_radiance:hsl(212, 100%, 50%); // #0079FF
     --lynch:         hsl(217, 20%, 51%);  // #697C9A
@@ -26,3 +29,13 @@ $lh-lrg:    3.3;
 $lh-med:    2.5;
 $lh-small:  2.4;
 $lh-xxsmall:1.0;
+
+@mixin breakmin($size) {
+    @media only screen and (min-width: $size) {
+        @content;
+    }
+}
+
+@mixin shadow {
+    box-shadow: 0 16px 30px -10px rgba(70, 96, 187, 19.86%);
+}

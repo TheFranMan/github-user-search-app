@@ -8,30 +8,65 @@
     border-radius: var.$radius;
     padding: 3.2em 2.4em;
 
+    @include var.breakmin(var.$ipad) {
+        $dimension: 117px;
+        margin-top: 2.4em;
+        padding: 4em;
+        grid-template-columns: $dimension 1fr;
+        @include var.shadow;
+    }
+
     &__avatar {
         $dimension: 70px;
         width: $dimension;
         height: $dimension;
         border-radius: 50%;
+
+        @include var.breakmin(var.$ipad) {
+            $dimension: 117px;
+            width: $dimension;
+            height: $dimension;
+        }
     }
 
     &__meta {
         margin-left: 1.9em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        @include var.breakmin(var.$ipad) {
+            margin-left: 4.1em;
+        }
 
         &__name {
             font-size: var.$fz-med;
             font-weight: 700;
             color: var(--theme-heading);
+
+            @include var.breakmin(var.$ipad) {
+                font-size: var.$fz-xlrg;
+                margin-bottom: .076923em;
+            }
         }
 
         &__username {
             font-size: var.$fz-xxsmall;
             color: var(--theme-primary);
+
+            @include var.breakmin(var.$ipad) {
+                font-size: var.$fz-med;
+                margin-bottom: .25em;
+            }
         }
 
         &__joined {
             font-size: var.$fz-xxsmall;
             color: var(--theme-foreground);
+
+            @include var.breakmin(var.$ipad) {
+                font-size: var.$fz-small;
+            }
         }
     }
 
@@ -41,6 +76,12 @@
         font-size: var.$fz-xxsmall;
         color: var(--theme-accent);
         line-height: 1.9230769em;
+
+        @include var.breakmin(var.$ipad) {
+            margin-top: 1.6em;
+            font-size: var.$fz-small;
+            line-height: 1.66666667em;
+        }
     }
 
     &__repos {
@@ -53,6 +94,11 @@
         justify-content: space-between;
         margin-top: 2.3em;
 
+        @include var.breakmin(var.$ipad) {
+            padding: 1.6em 3.2em;
+            margin-top: 3.2em;
+        }
+
         &__card {
             &__title {
                 font-size: 1.1em;
@@ -60,12 +106,22 @@
                 font-weight: 400;
                 text-transform: capitalize;
                 margin-bottom: .72727272em;
+
+                @include var.breakmin(var.$ipad) {
+                    font-size: var.$fz-xxsmall;
+                    margin-bottom: 0;
+                }
             }
 
             &__value {
                 font-size: 1.6em;
                 color: var(--theme-heading);
                 font-weight: 700;
+
+                @include var.breakmin(var.$ipad) {
+                    font-size: var.$fz-lrg;
+                    text-align: left;
+                }
             }
         }
     }
@@ -75,11 +131,21 @@
         list-style-type: none;
         margin-top: 2.4em;
 
+        @include var.breakmin(var.$ipad) {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
         &__item {
             display: grid;
             grid-template-columns: 20px 1fr;
             margin-bottom: 1.6em;
             font-size: var.$fz-xxsmall;
+
+            @include var.breakmin(var.$ipad) {
+                width: 50%;
+                margin-bottom: 1.4615384em;
+            }
 
             &__icon {
                 path {
@@ -91,6 +157,10 @@
                 padding-left: 1em;
                 color: var(--theme-accent);
                 width: max-content;
+
+                @include var.breakmin(var.$ipad) {
+                    font-size: var.$fz-small;
+                }
             }
         }
     }

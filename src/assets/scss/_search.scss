@@ -10,10 +10,21 @@
     padding-left: 1.6em;
     border-radius: var.$radius;
 
+    @include var.breakmin(var.$ipad) {
+        padding: .95em;
+        @include var.shadow;
+    }
+
     &__icon {
-        // margin-left: 1.6em;
-        width: 20px;
-        height: 20px;
+        $dimension: 20px;
+
+        @include var.breakmin(var.$ipad) {
+            $dimension: 24px;
+            margin-left: 2.25em;
+        }
+
+        width: $dimension;
+        height: $dimension;
     }
 
     &__form {
@@ -32,6 +43,11 @@
             color: var(--theme-accent);
             background-color: var(--theme-secondary);
 
+            @include var.breakmin(var.$ipad) {
+                font-size: 1.8rem;
+                line-height: 1.38889em;
+            }
+
             &::placeholder{
                 color: var(--theme-accent);
             }
@@ -43,9 +59,13 @@
             white-space: nowrap;
             font-weight: 700;
             font-size: 1.2rem;
-            right: 35%;
+            right: 100px;
             top: 50%;
             transform: translateY(-50%);
+
+            @include var.breakmin(var.$ipad) {
+                right: 120px;
+            }
         }
 
         &__submit {
@@ -57,6 +77,11 @@
             background-color: var(--theme-primary);
             border: none;
             border-radius: var.$radius;
+
+            @include var.breakmin(var.$ipad) {
+                font-size: 1.6rem;
+                padding: .78125em 1.5em;
+            }
 
             &:hover {
                 cursor: pointer;
