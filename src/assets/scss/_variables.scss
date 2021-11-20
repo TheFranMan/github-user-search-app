@@ -4,17 +4,19 @@ $radius: 1.5rem;
 
 $mobile: 375px;
 $ipad: 573px;
+$desktop: 730px;
 
 :root {
-    --azure_radiance:hsl(212, 100%, 50%); // #0079FF
-    --lynch:         hsl(217, 20%, 51%);  // #697C9A
-    --kashmir-blue:  hsl(217, 35%, 45%);  // #4B6A9B
-    --ebony-clay:    hsl(216, 21%, 21%);  // #2B3442
-    --zircon:        hsl(227, 100%, 98%); // #F6F8FF
-    --white:         hsl(0, 0%, 100%);    // #FEFEFE
-    --big-stone:     hsl(220, 40%, 13%);  // #141d2f
-    --cloud-burst:   hsl(222, 41%, 20%);  // #1E2A47
-    --sunset-orange: hsl(0, 92%, 62%);    // #F74646
+    --azure_radiance:hsl(212, 100%, 50%);   // #0079FF
+    --lynch:         hsl(217, 20%, 51%);    // #697C9A
+    --kashmir-blue:  hsl(217, 35%, 45%);    // #4B6A9B
+    --ebony-clay:    hsl(216, 21%, 21%);    // #2B3442
+    --zircon:        hsl(227, 100%, 98%);   // #F6F8FF
+    --white:         hsl(0, 0%, 100%);      // #FEFEFE
+    --big-stone:     hsl(220, 40%, 13%);    // #141d2f
+    --cloud-burst:   hsl(222, 41%, 20%);    // #1E2A47
+    --sunset-orange: hsl(0, 92%, 62%);      // #F74646
+    --malibu:        hsl(211.7,100%,68.8%); // #60ABFF
 }
 
 $fz-xlrg:    2.6rem;

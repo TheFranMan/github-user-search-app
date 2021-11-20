@@ -10,6 +10,7 @@
     --theme-accent:     var(--kashmir-blue);
     --theme-error:      var(--sunset-orange);
     --theme-white:      var(--white);
+    --theme-hover:      var(--malibu);
 }
 
 .dark-mode {
@@ -20,6 +21,7 @@
     --theme-accent:     var(--white );
     --theme-error:      var(--sunset-orange);
     --theme-white:      var(--white);
+    --theme-hover:      var(--malibu);
 }
 
 .sr-only {
@@ -64,7 +66,10 @@ a {
     padding: 0 2.4em;
 
     @include var.breakmin(var.$ipad) {
-        color: green;
         width: var.$ipad;
+    }
+
+    @include var.breakmin(var.$desktop) {
+        width: var.$desktop;
     }
 }

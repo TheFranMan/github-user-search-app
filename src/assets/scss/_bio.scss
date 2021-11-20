@@ -16,6 +16,10 @@
         @include var.shadow;
     }
 
+    @include var.breakmin(var.$desktop) {
+        grid-template-columns: 158px 1fr;
+    }
+
     &__avatar {
         $dimension: 70px;
         width: $dimension;
@@ -26,6 +30,11 @@
             $dimension: 117px;
             width: $dimension;
             height: $dimension;
+        }
+
+        @include var.breakmin(var.$desktop) {
+            grid-column: 1 / 2;
+            grid-row: 1 / 5;
         }
     }
 
@@ -39,6 +48,13 @@
             margin-left: 4.1em;
         }
 
+        @include var.breakmin(var.$desktop) {
+            margin-left: 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            align-items: center;
+        }
+
         &__name {
             font-size: var.$fz-med;
             font-weight: 700;
@@ -47,6 +63,10 @@
             @include var.breakmin(var.$ipad) {
                 font-size: var.$fz-xlrg;
                 margin-bottom: .076923em;
+            }
+
+            @include var.breakmin(var.$desktop) {
+                grid-column: 1 / 2;
             }
         }
 
@@ -58,6 +78,10 @@
                 font-size: var.$fz-med;
                 margin-bottom: .25em;
             }
+
+            @include var.breakmin(var.$desktop) {
+                grid-column: 1 / 2;
+            }
         }
 
         &__joined {
@@ -66,6 +90,12 @@
 
             @include var.breakmin(var.$ipad) {
                 font-size: var.$fz-small;
+            }
+
+            @include var.breakmin(var.$desktop) {
+                grid-column: 2 / -1;
+                grid-row: 1 / 2;
+                text-align: right;
             }
         }
     }
@@ -82,6 +112,10 @@
             font-size: var.$fz-small;
             line-height: 1.66666667em;
         }
+
+        @include var.breakmin(var.$desktop) {
+            grid-column: 2 / -1;
+        }
     }
 
     &__repos {
@@ -97,6 +131,10 @@
         @include var.breakmin(var.$ipad) {
             padding: 1.6em 3.2em;
             margin-top: 3.2em;
+        }
+
+        @include var.breakmin(var.$desktop) {
+            grid-column: 2 / -1;
         }
 
         &__card {
@@ -136,15 +174,37 @@
             flex-wrap: wrap;
         }
 
+        @include var.breakmin(var.$desktop) {
+            grid-column: 2 / -1;
+            margin-top: 3.2em;
+        }
+
         &__item {
             display: grid;
             grid-template-columns: 20px 1fr;
             margin-bottom: 1.6em;
             font-size: var.$fz-xxsmall;
+            overflow: hidden;
 
             @include var.breakmin(var.$ipad) {
                 width: 50%;
                 margin-bottom: 1.4615384em;
+
+                &.location {
+                    order: 1;
+                }
+
+                &.blog {
+                    order: 3;
+                }
+
+                &.twitter {
+                    order: 2;
+                }
+
+                &.company {
+                    order: 4;
+                }
             }
 
             &__icon {
@@ -162,6 +222,16 @@
                     font-size: var.$fz-small;
                 }
             }
+
+
+        }
+    }
+}
+
+.dark-mode {
+    .bio {
+        @include var.breakmin(var.$ipad) {
+            box-shadow: none;
         }
     }
 }

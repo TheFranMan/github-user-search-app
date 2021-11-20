@@ -64,6 +64,7 @@
             transform: translateY(-50%);
 
             @include var.breakmin(var.$ipad) {
+                font-size: var.$fz-small;
                 right: 120px;
             }
         }
@@ -85,7 +86,16 @@
 
             &:hover {
                 cursor: pointer;
+                background-color: var(--theme-hover);
             }
+        }
+    }
+}
+
+.dark-mode {
+    .search {
+        @include var.breakmin(var.$ipad) {
+            box-shadow: none;
         }
     }
 }
