@@ -93,6 +93,24 @@ function App() {
     getUser(username)
   }
 
+  // Listen to system level color scheme changes.
+  // These override app level changes
+  useEffect(() => {
+    let themeMode = window.matchMedia("(prefers-color-scheme: dark)")
+
+    themeMode.addEventListener('change', function (evt) {
+      let isDarkMode = evt.matches
+
+      if ( isDarkMode ) {
+        document.body.classList.add('dark-mode')
+        updateDarkMode(true)
+      } else {
+        document.body.classList.remove('dark-mode')
+        updateDarkMode(false)
+      }
+    });
+  }, [])
+
 
   function handleThemeSwitch() {
     document.body.classList.toggle('dark-mode')
