@@ -6,6 +6,7 @@ import '../assets/scss/main.scss'
 
 function App() {
   const DEFAULT_USER_NAME = 'octocat'
+  const DARK_MODE = 'dark-mode'
 
   let defaultUser = {
     avatar: null,
@@ -102,10 +103,10 @@ function App() {
       let isDarkMode = evt.matches
 
       if ( isDarkMode ) {
-        document.body.classList.add('dark-mode')
+        document.body.classList.add(DARK_MODE)
         updateDarkMode(true)
       } else {
-        document.body.classList.remove('dark-mode')
+        document.body.classList.remove(DARK_MODE)
         updateDarkMode(false)
       }
     });
@@ -113,7 +114,7 @@ function App() {
 
 
   function handleThemeSwitch() {
-    document.body.classList.toggle('dark-mode')
+    document.body.classList.toggle(DARK_MODE)
     updateDarkMode(!darkMode)
   }
 
