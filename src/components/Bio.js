@@ -9,7 +9,10 @@ export default function Bio(props) {
     let notAvailable = <span className="bio__links__item__text">Not Available</span>
 
     let joined = ''
+    let joined_machine = ''
     if ( null !== props.user.joined ) {
+        joined_machine = props.user.joined
+
         let formattedDate = new Date(props.user.joined).toLocaleDateString('en-GB', {
             year: 'numeric',
             month: 'short',
@@ -68,7 +71,7 @@ export default function Bio(props) {
             <div className="bio__meta">
                 <p className="bio__meta__name">{ name }</p>
                 <p className="bio__meta__username">@{ props.user.username }</p>
-                <time className="bio__meta__joined" dateTime={ joined }>{ joined }</time>
+                <time className="bio__meta__joined" dateTime={ joined_machine }>{ joined }</time>
             </div>
             <p className={ classnames( "bio__bio", null === props.user.bio ? unavailableClass : '' ) }>{ bio }</p>
             <div className="bio__repos">
