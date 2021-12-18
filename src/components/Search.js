@@ -2,7 +2,7 @@ import icon_search from '../assets/images/icon-search.svg'
 
 export default function Search(props) {
     return (
-        <form className="search" onSubmit={props.onSubmit}>
+        <form className="search" onSubmit={props.onSubmit} aria-label="search">
             <img className="search__icon" src={ icon_search } alt="Search"/>
             <input
                 className="search__input"
