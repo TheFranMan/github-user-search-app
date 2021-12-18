@@ -104,7 +104,7 @@ export default function Bio(props) {
 function Details(props) {
     return (
         <div className="bio__repos__card">
-            <h3 className="bio__repos__card__title">{ props.title }</h3>
+            <h2 className="bio__repos__card__title">{ props.title }</h2>
             <div className="bio__repos__card__value">{ props.value }</div>
         </div>
     );
