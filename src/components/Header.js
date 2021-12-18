@@ -1,14 +1,18 @@
+import { useContext } from 'react'
+import { ThemeContext } from './App.js'
 import icon_moon from '../assets/images/icon-moon.svg'
 import icon_sun from '../assets/images/icon-sun.svg'
 
 export default function Header(props) {
+    const darkMode = useContext(ThemeContext)
+
     let themeDetails = {
         text: "Light",
         icon: icon_sun,
         alt: "sun",
     }
 
-    if (!props.darkMode) {
+    if (!darkMode) {
         themeDetails.text = "Dark"
         themeDetails.icon = icon_moon
         themeDetails.alt = "crescent moon"

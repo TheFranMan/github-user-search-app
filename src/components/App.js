@@ -1,8 +1,10 @@
-import { useState, useReducer, useEffect } from 'react';
+import React, { useState, useReducer, useEffect } from 'react';
 import Header from './Header.js'
 import Search from './Search.js'
 import Bio from './Bio.js'
 import '../assets/scss/main.scss'
+
+export const ThemeContext = React.createContext()
 
 function App() {
   const DEFAULT_USER_NAME = 'octocat'
@@ -120,9 +122,11 @@ function App() {
 
   return (
     <>
-      <Header darkMode={ darkMode } onClick={ handleThemeSwitch } />
-      <Search error={ searchErr } clearError={()=>updateSearchErr(false)} onSubmit={ handelGetUser }/>
-      <Bio user={ user }/>
+      <ThemeContext.Provider value={darkMode}>
+        <Header onClick={ handleThemeSwitch } />
+        <Search error={ searchErr } clearError={()=>updateSearchErr(false)} onSubmit={ handelGetUser }/>
+        <Bio user={ user }/>
+      </ThemeContext.Provider>
     </>
   )
 }
