@@ -1,13 +1,13 @@
 @use 'variables' as var;
 
 .search {
-    margin-top: 3.6em;
+    position: relative;
     display: flex;
-    align-items: center;
-    background-color: var(--theme-secondary);
+    margin-top: 3.6em;
     padding: .65em 0;
     padding-right: 0.7em;
     padding-left: 1.6em;
+    background-color: var(--theme-secondary);
     border-radius: var.$radius;
 
     @include var.breakmin(var.$ipad) {
@@ -16,6 +16,7 @@
     }
 
     &__icon {
+        align-self: center;
         $dimension: 20px;
 
         @include var.breakmin(var.$ipad) {
@@ -27,73 +28,67 @@
         height: $dimension;
     }
 
-    &__form {
-        display: flex;
-        position: relative;
-        width: 100%;
+    &__input {
+        margin-left: .895em;
+        flex: 1;
+        border: none;
+        outline: none; // for a11y?
+        font-family: var.$font-family;
+        font-size: 1.2rem;
+        line-height: 1.92308em;
+        color: var(--theme-accent);
+        background-color: var(--theme-secondary);
 
-        &__input {
-            margin-left: .895em;
-            flex: 1;
-            border: none;
-            outline: none; // for a11y?
-            font-family: var.$font-family;
-            font-size: 1.2rem;
-            line-height: 1.92308em;
+        @include var.breakmin(var.$ipad) {
+            font-size: 1.8rem;
+            line-height: 1.38889em;
+        }
+
+        &::placeholder{
             color: var(--theme-accent);
-            background-color: var(--theme-secondary);
+        }
+    }
 
-            @include var.breakmin(var.$ipad) {
-                font-size: 1.8rem;
-                line-height: 1.38889em;
-            }
+    &__errors {
+        position: absolute;
+        color: var(--theme-error);
+        white-space: nowrap;
+        font-weight: 700;
+        font-size: 1.2rem;
+        right: 100px;
+        top: 50%;
+        transform: translateY(-50%);
 
-            &::placeholder{
-                color: var(--theme-accent);
-            }
+        @include var.breakmin(var.$ipad) {
+            font-size: var.$fz-small;
+            right: 120px;
+        }
+    }
+
+    &__submit {
+        padding: .892857em 1.285714em;
+        font-family: var.$font-family;
+        font-size: var.$fz-xsmall;
+        font-weight: 700;
+        color: var(--theme-white);
+        background-color: var(--theme-primary);
+        border: none;
+        border-radius: var.$radius;
+
+        @include var.breakmin(var.$ipad) {
+            font-size: 1.6rem;
+            padding: .78125em 1.5em;
         }
 
-        &__errors {
-            position: absolute;
-            color: var(--theme-error);
-            white-space: nowrap;
-            font-weight: 700;
-            font-size: 1.2rem;
-            right: 100px;
-            top: 50%;
-            transform: translateY(-50%);
-
-            @include var.breakmin(var.$ipad) {
-                font-size: var.$fz-small;
-                right: 120px;
-            }
-        }
-
-        &__submit {
-            padding: .892857em 1.285714em;
-            font-family: var.$font-family;
-            font-size: var.$fz-xsmall;
-            font-weight: 700;
-            color: var(--theme-white);
-            background-color: var(--theme-primary);
-            border: none;
-            border-radius: var.$radius;
-
-            @include var.breakmin(var.$ipad) {
-                font-size: 1.6rem;
-                padding: .78125em 1.5em;
-            }
-
-            &:hover {
-                cursor: pointer;
-                background-color: var(--theme-hover);
-            }
+        &:hover {
+            cursor: pointer;
+            background-color: var(--theme-hover);
         }
     }
 }
 
 .dark-mode {
-    .search {
+    .search2 {
         @include var.breakmin(var.$ipad) {
             box-shadow: none;
         }
