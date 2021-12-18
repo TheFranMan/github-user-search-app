@@ -53,6 +53,7 @@ function App() {
 
   const [darkMode, updateDarkMode] = useState(false)
   const [searchErr, updateSearchErr] = useState(false)
+  const [themeSwitchLabel, updateThemeSwitchLabel] = useState('enable dark mode')
   const [user, dispatch] = useReducer(userReducer, defaultUser)
 
   // Called only on mount, so basically when the page loads.
@@ -120,10 +121,20 @@ function App() {
     updateDarkMode(!darkMode)
   }
 
+  useEffect(() => {
+    let label = 'enable dark mode'
+
+    if ( darkMode ) {
+      label = 'enable light mode'
+    }
+
+    updateThemeSwitchLabel(label)
+  }, [darkMode])
+
   return (
     <>
       <ThemeContext.Provider value={darkMode}>
-        <Header onClick={ handleThemeSwitch } />
+        <Header onClick={ handleThemeSwitch } themeSwitchLabel={themeSwitchLabel} />
         <Search error={ searchErr } clearError={()=>updateSearchErr(false)} onSubmit={ handelGetUser }/>
         <Bio user={ user }/>
       </ThemeContext.Provider>

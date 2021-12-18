@@ -21,7 +21,7 @@ export default function Header(props) {
     return (
         <header className="main_header">
             <h1 className="main_header__title">devfinder</h1>
-            <div className="main_header__switcher" onClick={ props.onClick } role="button">
+            <div className="main_header__switcher" onClick={ props.onClick } role="button" aria-label={ props.themeSwitchLabel }>
                 { themeDetails.text }
                 <img className="main_header__switcher__img" src={ themeDetails.icon } alt={ themeDetails.alt } />
             </div>
