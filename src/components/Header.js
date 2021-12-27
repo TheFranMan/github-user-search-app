@@ -23,10 +23,17 @@ export default function Header(props) {
     return (
         <header className="main_header">
             <h1 className="main_header__title">devfinder</h1>
-            <button class="main_header__theme" onClick={ props.onClick } aria-labelledby="theme-heading" role="switch" aria-checked={ themeDetails.pressed }>
-                <div id="theme-heading" class="sr-only">Enable dark mode</div>
+            <button
+                class="main_header__theme"
+                type="button"
+                onClick={ props.onClick }
+                aria-labelledby="theme-heading"
+                role="switch"
+                aria-checked={ themeDetails.pressed }
+            >
+                <h2 id="theme-heading" class="sr-only">Enable dark mode</h2>
                 { themeDetails.text }
-                <img className="main_header__theme__img" src={ themeDetails.icon } alt={ themeDetails.alt } aria-hidden="true"/>
+                <img className="main_header__theme__img" src={ themeDetails.icon } aria-hidden="true"/>
             </button>
         </header>
     );
