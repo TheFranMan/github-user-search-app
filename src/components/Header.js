@@ -31,7 +31,7 @@ export default function Header(props) {
                 role="switch"
                 aria-checked={ themeDetails.pressed }
             >
-                <h2 id="theme-heading" class="sr-only">Enable dark mode</h2>
+                <p id="theme-heading" class="sr-only">Enable dark mode</p>
                 { themeDetails.text }
                 <img className="main_header__theme__img" src={ themeDetails.icon } aria-hidden="true" alt="" />
             </button>
