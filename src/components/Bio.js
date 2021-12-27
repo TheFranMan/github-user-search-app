@@ -74,12 +74,16 @@ export default function Bio(props) {
                 <time className="bio__meta__joined" dateTime={ joined_machine }>{ joined }</time>
             </div>
             <p className={ classnames( "bio__bio", null === props.user.bio ? unavailableClass : '' ) }>{ bio }</p>
-            <div className="bio__repos" aria-label="repository information">
+            <div className="bio__repos" aria-labelledby="repo-info">
+                <h2 id="repo-info" class="sr-only">repository information</h2>
+
                 <Details title="repos" value={ props.user.repos.number } />
                 <Details title="followers" value={ props.user.repos.followers } />
                 <Details title="following" value={ props.user.repos.following } />
             </div>
-            <ul className="bio__links" aria-label="contact information">
+
+            <h2 id="contact-info" class="sr-only">contact information</h2>
+            <ul className="bio__links" aria-labelledby="contact-info">
                 <li className={ classnames("bio__links__item location", locationNotActive ? '' : unavailableClass) }>
                     <IconLocation className="bio__links__item__icon" role="img" title="location" />
                     { location }
