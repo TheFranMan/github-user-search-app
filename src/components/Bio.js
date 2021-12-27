@@ -74,26 +74,26 @@ export default function Bio(props) {
                 <time className="bio__meta__joined" dateTime={ joined_machine }>{ joined }</time>
             </div>
             <p className={ classnames( "bio__bio", null === props.user.bio ? unavailableClass : '' ) }>{ bio }</p>
-            <div className="bio__repos">
+            <div className="bio__repos" aria-label="repository information">
                 <Details title="repos" value={ props.user.repos.number } />
                 <Details title="followers" value={ props.user.repos.followers } />
                 <Details title="following" value={ props.user.repos.following } />
             </div>
-            <ul className="bio__links">
+            <ul className="bio__links" aria-label="contact information">
                 <li className={ classnames("bio__links__item location", locationNotActive ? '' : unavailableClass) }>
-                    <IconLocation className="bio__links__item__icon" />
+                    <IconLocation className="bio__links__item__icon" role="img" title="location" />
                     { location }
                 </li>
                 <li className={ classnames("bio__links__item blog", blogNotActive ? '' : unavailableClass) }>
-                    <IconWebsite className="bio__links__item__icon" />
+                    <IconWebsite className="bio__links__item__icon" role="img" title="blog" />
                     { blog }
                 </li>
                 <li className={ classnames("bio__links__item twitter", twitterNotActive ? '' : unavailableClass) }>
-                    <IconTwitter className="bio__links__item__icon" />
+                    <IconTwitter className="bio__links__item__icon" role="img" title="twitter" />
                     { twitter }
                 </li>
                 <li className={ classnames("bio__links__item company", companyNotActive ? '' : unavailableClass) }>
-                    <IconCompany className="bio__links__item__icon" />
+                    <IconCompany className="bio__links__item__icon" role="img" title="company" />
                     { company }
                 </li>
             </ul>
