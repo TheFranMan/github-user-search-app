@@ -10,16 +10,18 @@
         color: var(--theme-heading);
     }
 
-    &__switcher {
+    &__theme {
         display: flex;
         justify-content: space-between;
         align-items: center;
         font-size: 1.3rem;
         letter-spacing: .19230769em;
-        // line-height: var.$lh-med;
         text-transform: uppercase;
         font-weight: 700;
         color: var(--theme-accent);
+        border: none;
+        background-color: inherit;
+        font-family: var.$font-family;
 
         &:hover {
             cursor: pointer;

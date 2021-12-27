@@ -9,22 +9,25 @@ export default function Header(props) {
     let themeDetails = {
         text: "Light",
         icon: icon_sun,
-        alt: "sun",
+        label: "enable light mode",
+        pressed: false,
     }
 
     if (!darkMode) {
         themeDetails.text = "Dark"
         themeDetails.icon = icon_moon
-        themeDetails.alt = "crescent moon"
+        themeDetails.label = "enable dark mode"
+        themeDetails.pressed = true
     }
 
     return (
         <header className="main_header">
             <h1 className="main_header__title">devfinder</h1>
-            <div className="main_header__switcher" onClick={ props.onClick } role="button" aria-label={ props.themeSwitchLabel }>
+            <button class="main_header__theme" onClick={ props.onClick } aria-labelledby="theme-heading" role="switch" aria-checked={ themeDetails.pressed }>
+                <div id="theme-heading" class="sr-only">Enable dark mode</div>
                 { themeDetails.text }
-                <img className="main_header__switcher__img" src={ themeDetails.icon } alt={ themeDetails.alt } />
-            </div>
+                <img className="main_header__theme__img" src={ themeDetails.icon } alt={ themeDetails.alt } aria-hidden="true"/>
+            </button>
         </header>
     );
 }
