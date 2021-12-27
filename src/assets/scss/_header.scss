@@ -28,6 +28,9 @@
         }
 
         &__img {
+            $dimension: 20px;
+            width: $dimension;
+            height: $dimension;
             margin-left: 1.2308em;
         }
     }
