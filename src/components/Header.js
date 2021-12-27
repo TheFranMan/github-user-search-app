@@ -33,7 +33,7 @@ export default function Header(props) {
             >
                 <h2 id="theme-heading" class="sr-only">Enable dark mode</h2>
                 { themeDetails.text }
-                <img className="main_header__theme__img" src={ themeDetails.icon } aria-hidden="true"/>
+                <img className="main_header__theme__img" src={ themeDetails.icon } aria-hidden="true" alt="" />
             </button>
         </header>
     );
